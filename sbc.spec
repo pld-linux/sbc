@@ -1,12 +1,12 @@
 Summary:	SBC library
 Summary(pl.UTF-8):	Biblioteka SBC
 Name:		sbc
-Version:	1.0
+Version:	1.1
 Release:	1
 License:	LGPL v2.1+ (library), GPL v2+ (tools)
 Group:		Libraries
 Source0:	http://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.xz
-# Source0-md5:	aa2bc39c4a09aade064efea4bbbc4b2d
+# Source0-md5:	ecadadbfd4b1dfe7b98f446c69126b23
 URL:		http://www.bluez.org/
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz

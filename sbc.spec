@@ -1,22 +1,24 @@
-Summary:	SBC library
-Summary(pl.UTF-8):	Biblioteka SBC
+Summary:	SBC codec library
+Summary(pl.UTF-8):	Biblioteka kodeka SBC
 Name:		sbc
-Version:	1.1
+Version:	1.2
 Release:	1
 License:	LGPL v2.1+ (library), GPL v2+ (tools)
 Group:		Libraries
-Source0:	http://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.xz
-# Source0-md5:	ecadadbfd4b1dfe7b98f446c69126b23
+Source0:	https://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.xz
+# Source0-md5:	ec65c444ad4c32aa85702641045b19e9
 URL:		http://www.bluez.org/
+BuildRequires:	libsndfile-devel
+BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-SBC library.
+SBC (Bluetooth low-complexity, subband codec) library.
 
 %description -l pl.UTF-8
-Biblioteka SBC.
+Biblioteka SBC (kodeka Bluetooth o małej złożoności).
 
 %package devel
 Summary:	Header files for SBC library

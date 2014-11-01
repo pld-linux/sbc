@@ -1,12 +1,12 @@
 Summary:	SBC codec library
 Summary(pl.UTF-8):	Biblioteka kodeka SBC
 Name:		sbc
-Version:	1.2
+Version:	1.3
 Release:	1
 License:	LGPL v2.1+ (library), GPL v2+ (tools)
 Group:		Libraries
 Source0:	https://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.xz
-# Source0-md5:	ec65c444ad4c32aa85702641045b19e9
+# Source0-md5:	2d8b7841f2c11ab287718d562f2b981c
 URL:		http://www.bluez.org/
 BuildRequires:	libsndfile-devel
 BuildRequires:	pkgconfig

@@ -7,6 +7,7 @@ License:	LGPL v2.1+ (library), GPL v2+ (tools)
 Group:		Libraries
 Source0:	https://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.xz
 # Source0-md5:	6ff244dde9e5e12b26362a47ed91d3f9
+Patch0:		non-x86.patch
 URL:		http://www.bluez.org/
 BuildRequires:	libsndfile-devel
 BuildRequires:	pkgconfig
@@ -48,6 +49,7 @@ Statyczna biblioteka SBC.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \

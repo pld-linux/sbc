@@ -1,13 +1,16 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static library
+
 Summary:	SBC codec library
 Summary(pl.UTF-8):	Biblioteka kodeka SBC
 Name:		sbc
-Version:	1.5
+Version:	2.0
 Release:	1
 License:	LGPL v2.1+ (library), GPL v2+ (tools)
 Group:		Libraries
 Source0:	https://www.kernel.org/pub/linux/bluetooth/%{name}-%{version}.tar.xz
-# Source0-md5:	6ff244dde9e5e12b26362a47ed91d3f9
-Patch0:		non-x86.patch
+# Source0-md5:	5613357181daeffd71e971c6f8470f8d
 URL:		http://www.bluez.org/
 BuildRequires:	libsndfile-devel
 BuildRequires:	pkgconfig
@@ -49,11 +52,12 @@ Statyczna biblioteka SBC.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure \
-	--disable-silent-rules
+	--disable-silent-rules \
+	%{?with_static_libs:--enable-static}
+
 %{__make}
 
 %install
@@ -86,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/sbc
 %{_pkgconfigdir}/sbc.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libsbc.a
+%endif
